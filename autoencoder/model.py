@@ -14,7 +14,7 @@ def autoencoder_model():
    """ design the autoencoder structure.
    """
    # the dimension of latent variable
-   encoding_dim = 10 
+   encoding_dim = 32 
    # input placeholder 
    input_data = Input(shape=(164,4))
 
@@ -28,6 +28,7 @@ def autoencoder_model():
    encoded = Conv1D(128,4, activation='relu',padding = 'same')(encoded)
 
    encoded = Flatten()(encoded)
+  
    # encoder = Model(inputs=input_data, outputs=encoded) 
    # print(encoder.summary())
 

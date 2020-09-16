@@ -16,12 +16,12 @@ print(X.shape)
 print(y.shape)
 
 encoder,autoencoder = autoencoder_model()
-num_iteration = 1
+num_iteration = 300
 my_optimizer = Adam(lr = 0.0003)
 
 if os.path.exists("autoencoder_model.h5"):
-        print("load the weights")
-        autoencoder.load_weights("autoencoder_model.h5")
+    print("load the weights")
+    autoencoder.load_weights("autoencoder_model.h5")
 
 autoencoder.compile(optimizer= my_optimizer)
 autoencoder.fit(X,epochs= num_iteration, batch_size=128)
